@@ -16,5 +16,7 @@
     <dimen name="button_size">150dp</dimen>
     <dimen name="fab_marginBottom">36dp</dimen>
     <dimen name="fab_sideMargin">56dp</dimen>
+    <dimen name="card_width">250dp</dimen>
+    <dimen name="card_height">363dp</dimen>
 
 </resources>

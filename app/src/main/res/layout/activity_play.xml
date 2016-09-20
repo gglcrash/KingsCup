@@ -8,22 +8,22 @@
     android:fitsSystemWindows="true"
     tools:context=".ui.activities.MainActivity"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/background">
+    >
 
     <FrameLayout
         android:id="@+id/main_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        >
+        android:background="@drawable/background">
 
         <ImageView
             android:id="@+id/img_card_view"
             android:background="@drawable/back"
-            android:layout_width="250dp"
-            android:layout_height="363dp"
+            android:layout_width="@dimen/card_width"
+            android:layout_height="@dimen/card_height"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/spacing_large_56"
+            android:layout_marginTop="@dimen/spacing_medium_32"
             />
     </FrameLayout>
 

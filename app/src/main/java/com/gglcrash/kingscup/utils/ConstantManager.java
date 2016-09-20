@@ -7,4 +7,5 @@ public interface ConstantManager {
 
     String TAG_PREFIX="KING";
 
+    String CARD_LIST="CARD_LIST";
 }

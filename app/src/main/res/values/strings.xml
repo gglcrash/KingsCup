@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">King\'s Cup</string>
+    <string name="rule_two">Для тебя</string>
+    <string name="three_rule">Для меня</string>
+    <string name="rule_four">Для пола</string>
+    <string name="rule_five">Для парней</string>
+    <string name="rule_six">Для девушек</string>
+    <string name="rule_seven">Для неба</string>
+    <string name="rule_eight">Для товарища</string>
+    <string name="rule_nine">Для рифмы</string>
+    <string name="rule_ten">\'Я никогда не\'</string>
+    <string name="rule_jack">Установи правило</string>
+    <string name="rule_queen">Мастер вопросов</string>
+    <string name="rule_king">Кубок короля</string>
+    <string name="rule_ace">Водопад</string>
 </resources>
