@@ -1,5 +1,6 @@
 package com.gglcrash.kingscup.ui.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -34,7 +35,8 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.play_btn)
     public void playClick(){
-        showToast("play!");
+        Intent intent = new Intent(this, PlayActivity.class);
+        startActivity(intent);
     }
 
     @OnClick(R.id.rules_btn)

@@ -7,14 +7,15 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".ui.activities.MainActivity"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
     <FrameLayout
         android:id="@+id/main_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        android:background="@drawable/background">
 
         <Button
             android:id="@+id/play_btn"
@@ -22,7 +23,8 @@
             android:layout_height="@dimen/button_size"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="56dp"
-            android:background="@drawable/ic_play_circle_filled_black_24dp"
+            android:background="@drawable/play_selector"
+
             />
 
         <Button
@@ -31,7 +33,7 @@
             android:layout_height="@dimen/button_size"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="256dp"
-            android:background="@drawable/ic_receipt_black_24dp"
+            android:background="@drawable/rules_selector"
             />
     </FrameLayout>
 
