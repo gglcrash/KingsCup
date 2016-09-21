@@ -14,7 +14,7 @@
         android:id="@+id/main_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background"
+        android:background="@color/sky_light"
         android:fitsSystemWindows="true"
         android:orientation="vertical">
 

@@ -5,9 +5,8 @@
     <color name="color_primary_darkest">#96484c</color>
     <color name="color_accent">#504065</color>
 
-    <color name="color_one">#2a7b7c</color>
-    <color name="color_two">#7c867e</color>
-    <color name="color_three">#74bfba</color>
+    <color name="sky_light">#e3f3ff</color>
+
     <color name="red">#ff0000</color>
 
     <color name="grey">#5d5d5d</color>

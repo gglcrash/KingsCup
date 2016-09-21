@@ -53,8 +53,9 @@ public class MainActivity extends BaseActivity {
     }
 
     @OnClick(R.id.rules_btn)
-    public void fabRulesClick(){
-        showToast("rules!");
+    public void onRulesClick(){
+        Intent intent = new Intent(this, RulesActivity.class);
+        startActivity(intent);
     }
 
     private void setCards(){
