@@ -13,4 +13,7 @@
     <string name="rule_queen">Мастер вопросов</string>
     <string name="rule_king">Кубок короля</string>
     <string name="rule_ace">Водопад</string>
+    <string name="cards_in_deck_text">Карт в колоде:</string>
+    <string name="cards_played_text">Карт сыграло:</string>
+    <string name="kings_played_text">Королей сыграло:</string>
 </resources>

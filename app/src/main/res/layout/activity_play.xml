@@ -2,31 +2,121 @@
 <android.support.design.widget.CoordinatorLayout
     android:id="@+id/main_coordinator_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".ui.activities.MainActivity"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/main_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background"
         android:fitsSystemWindows="true"
-        android:background="@drawable/background">
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/advice_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            android:text="Длинный клик по карте откроет следющую"/>
 
         <ImageView
             android:id="@+id/img_card_view"
-            android:background="@drawable/back"
             android:layout_width="@dimen/card_width"
             android:layout_height="@dimen/card_height"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/spacing_medium_32"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            android:background="@drawable/back"
             />
-    </FrameLayout>
 
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_medium_32"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="@string/cards_in_deck_text"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/cards_in_deck_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="@string/cards_played_text"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/cards_played_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="@string/kings_played_text"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/kings_played_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
 
 
     <android.support.design.widget.FloatingActionButton

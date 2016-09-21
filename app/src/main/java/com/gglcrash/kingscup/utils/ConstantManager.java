@@ -8,4 +8,6 @@ public interface ConstantManager {
     String TAG_PREFIX="KING";
 
     String CARD_LIST="CARD_LIST";
+
+    int CARDS_IN_DECK = 52;
 }
