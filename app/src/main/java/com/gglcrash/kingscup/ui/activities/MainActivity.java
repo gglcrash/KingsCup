@@ -7,6 +7,7 @@ import android.view.View;
 import com.gglcrash.kingscup.R;
 import com.gglcrash.kingscup.utils.Card;
 import com.gglcrash.kingscup.utils.ConstantManager;
+import com.gglcrash.kingscup.utils.Rule;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,8 @@ public class MainActivity extends BaseActivity {
         NINE, TEN, JACK, QUEEN, KING, ACE
     }
 
+    private ArrayList<Rule> enabledRulesList = new ArrayList<>();
+    private ArrayList<Rule> allOfMyRulesList = new ArrayList<>();
     private ArrayList<Card> myCardList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,6 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         View decorView = getWindow().getDecorView();
-        // Hide the status bar.
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
@@ -55,7 +57,22 @@ public class MainActivity extends BaseActivity {
     @OnClick(R.id.rules_btn)
     public void onRulesClick(){
         Intent intent = new Intent(this, RulesActivity.class);
-        startActivity(intent);
+        intent.putParcelableArrayListExtra(ConstantManager.ALL_RULES_LIST,allOfMyRulesList);
+        intent.putParcelableArrayListExtra(ConstantManager.ENABLED_RULES_LIST,enabledRulesList);
+        startActivityForResult(intent,ConstantManager.RESULT_RULES_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch(requestCode){
+            case ConstantManager.RESULT_RULES_CODE:
+            {
+                if(data!=null) {
+                    allOfMyRulesList = data.getParcelableArrayListExtra(ConstantManager.ALL_RULES_LIST);
+                    enabledRulesList = data.getParcelableArrayListExtra(ConstantManager.ENABLED_RULES_LIST);
+                }
+            }
+        }
     }
 
     private void setCards(){

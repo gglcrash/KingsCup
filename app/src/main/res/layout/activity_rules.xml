@@ -1,86 +1,581 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:padding="16dp"
-              android:orientation="vertical"
-              android:background="@color/sky_light"
-              android:fitsSystemWindows="true"
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior=".ui.behaviors.CustomNestedScrollBehavior"
     >
-    <android.support.v7.widget.CardView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cv2"
-        app:cardElevation="4dp"
+        android:layout_height="match_parent"
+        android:background="@color/sky_light"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        android:padding="16dp"
         >
-        <RelativeLayout
+
+        //2
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/two_cv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            app:cardElevation="@dimen/card_elevation"
             >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/rule_two_img"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="16dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/rule_two_title"
-                android:layout_toRightOf="@+id/rule_two_img"
-                android:layout_alignParentTop="true"
-                android:textSize="30sp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/rule_two_text"
-                android:layout_toRightOf="@+id/rule_two_img"
-                android:layout_below="@+id/rule_two_title"
-                />
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cv3"
-        android:layout_marginTop="@dimen/spacing_small_8"
-        app:cardElevation="4dp"
-        >
-        <RelativeLayout
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/two_rule_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/two_rule_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/two_rule_img"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/two_rule_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/two_rule_title"
+                    android:layout_toRightOf="@+id/two_rule_img"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        //3
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/three_cv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            app:cardElevation="@dimen/card_elevation"
             >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/rule_three_img"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="16dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/rule_three_title"
-                android:layout_toRightOf="@+id/rule_three_img"
-                android:layout_alignParentTop="true"
-                android:textSize="30sp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/rule_three_text"
-                android:layout_toRightOf="@+id/rule_three_img"
-                android:layout_below="@+id/rule_three_title"
-                />
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
 
-</LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/three_rule_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/three_rule_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/three_rule_img"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/three_rule_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/three_rule_title"
+                    android:layout_toRightOf="@+id/three_rule_img"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        //4
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/four_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            app:cardElevation="@dimen/card_elevation"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/four_rule_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/four_rule_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/four_rule_img"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/four_rule_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/four_rule_title"
+                    android:layout_toRightOf="@+id/four_rule_img"
+                    android:text=""
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        //5
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/five_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            app:cardElevation="@dimen/card_elevation"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/five_rule_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/five_rule_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/five_rule_img"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/five_rule_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/five_rule_title"
+                    android:layout_toRightOf="@+id/five_rule_img"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        //6
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/six_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            app:cardElevation="@dimen/card_elevation"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/six_rule_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/six_rule_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/six_rule_img"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/six_rule_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/six_rule_title"
+                    android:layout_toRightOf="@+id/six_rule_img"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        //7
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/seven_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            app:cardElevation="@dimen/card_elevation"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/seven_rule_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/seven_rule_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/seven_rule_img"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/seven_rule_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seven_rule_title"
+                    android:layout_toRightOf="@+id/seven_rule_img"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        //8
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/eight_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            app:cardElevation="@dimen/card_elevation"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/eight_rule_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/eight_rule_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/eight_rule_img"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/eight_rule_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/eight_rule_title"
+                    android:layout_toRightOf="@+id/eight_rule_img"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        //9
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/nine_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            app:cardElevation="@dimen/card_elevation"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/nine_rule_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/nine_rule_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/nine_rule_img"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/nine_rule_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nine_rule_title"
+                    android:layout_toRightOf="@+id/nine_rule_img"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        //10
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/ten_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            app:cardElevation="@dimen/card_elevation"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/ten_rule_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/ten_rule_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/ten_rule_img"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/ten_rule_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ten_rule_title"
+                    android:layout_toRightOf="@+id/ten_rule_img"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        //J
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/jack_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            app:cardElevation="@dimen/card_elevation"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/jack_rule_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/jack_rule_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/jack_rule_img"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/jack_rule_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/jack_rule_title"
+                    android:layout_toRightOf="@+id/jack_rule_img"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        //Q
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/queen_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            app:cardElevation="@dimen/card_elevation"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/queen_rule_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/queen_rule_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/queen_rule_img"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/queen_rule_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/queen_rule_title"
+                    android:layout_toRightOf="@+id/queen_rule_img"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        //K
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/king_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            app:cardElevation="@dimen/card_elevation"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/king_rule_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/king_rule_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/king_rule_img"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/king_rule_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/king_rule_title"
+                    android:layout_toRightOf="@+id/king_rule_img"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        //A
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/ace_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small_8"
+            app:cardElevation="@dimen/card_elevation"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/ace_rule_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+
+                <TextView
+                    android:id="@+id/ace_rule_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/ace_rule_img"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/ace_rule_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ace_rule_title"
+                    android:layout_toRightOf="@+id/ace_rule_img"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

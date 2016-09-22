@@ -57,8 +57,8 @@ public class PlayActivity extends BaseActivity {
         kingsCount = 0;
         playedCards = 0;
         currentCard = null;
+
         View decorView = getWindow().getDecorView();
-        // Hide the status bar.
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
