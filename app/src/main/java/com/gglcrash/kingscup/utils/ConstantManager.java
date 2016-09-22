@@ -12,6 +12,9 @@ public interface ConstantManager {
     int CARDS_IN_DECK = 52;
     int RESULT_RULES_CODE = 101;
 
+    int MINI_CARD_WIDTH = 167;
+    int MINI_CARD_HEIGHT = 242;
+
     String ALL_RULES_LIST = "ALL_RULES_LIST";
     String ENABLED_RULES_LIST = "ENABLED_RULES_LIST";
 }

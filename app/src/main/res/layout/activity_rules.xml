@@ -17,7 +17,6 @@
         >
 
         //2
-
         <android.support.v7.widget.CardView
             android:id="@+id/two_cv"
             android:layout_width="match_parent"
@@ -47,6 +46,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/two_rule_img"
                     android:textSize="30sp"
+                    android:textColor="@color/grey_background"
                     />
 
                 <TextView
@@ -58,8 +58,8 @@
                     />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
-        //3
 
+        //3
         <android.support.v7.widget.CardView
             android:id="@+id/three_cv"
             android:layout_width="match_parent"
@@ -84,6 +84,7 @@
                     />
 
                 <TextView
+                    android:textColor="@color/grey_background"
                     android:id="@+id/three_rule_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -101,8 +102,8 @@
                     />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
-        //4
 
+        //4
         <android.support.v7.widget.CardView
             android:id="@+id/four_cv"
             android:layout_width="match_parent"
@@ -127,6 +128,7 @@
                     />
 
                 <TextView
+                    android:textColor="@color/grey_background"
                     android:id="@+id/four_rule_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -145,8 +147,8 @@
                     />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
-        //5
 
+        //5
         <android.support.v7.widget.CardView
             android:id="@+id/five_cv"
             android:layout_width="match_parent"
@@ -171,6 +173,7 @@
                     />
 
                 <TextView
+                    android:textColor="@color/grey_background"
                     android:id="@+id/five_rule_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -188,8 +191,8 @@
                     />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
-        //6
 
+        //6
         <android.support.v7.widget.CardView
             android:id="@+id/six_cv"
             android:layout_width="match_parent"
@@ -214,6 +217,7 @@
                     />
 
                 <TextView
+                    android:textColor="@color/grey_background"
                     android:id="@+id/six_rule_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -231,8 +235,8 @@
                     />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
-        //7
 
+        //7
         <android.support.v7.widget.CardView
             android:id="@+id/seven_cv"
             android:layout_width="match_parent"
@@ -257,6 +261,7 @@
                     />
 
                 <TextView
+                    android:textColor="@color/grey_background"
                     android:id="@+id/seven_rule_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -274,8 +279,8 @@
                     />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
-        //8
 
+        //8
         <android.support.v7.widget.CardView
             android:id="@+id/eight_cv"
             android:layout_width="match_parent"
@@ -300,6 +305,7 @@
                     />
 
                 <TextView
+                    android:textColor="@color/grey_background"
                     android:id="@+id/eight_rule_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -317,8 +323,8 @@
                     />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
-        //9
 
+        //9
         <android.support.v7.widget.CardView
             android:id="@+id/nine_cv"
             android:layout_width="match_parent"
@@ -343,6 +349,7 @@
                     />
 
                 <TextView
+                    android:textColor="@color/grey_background"
                     android:id="@+id/nine_rule_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -360,8 +367,8 @@
                     />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
-        //10
 
+        //10
         <android.support.v7.widget.CardView
             android:id="@+id/ten_cv"
             android:layout_width="match_parent"
@@ -386,6 +393,7 @@
                     />
 
                 <TextView
+                    android:textColor="@color/grey_background"
                     android:id="@+id/ten_rule_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -403,8 +411,8 @@
                     />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
-        //J
 
+        //J
         <android.support.v7.widget.CardView
             android:id="@+id/jack_cv"
             android:layout_width="match_parent"
@@ -429,6 +437,7 @@
                     />
 
                 <TextView
+                    android:textColor="@color/grey_background"
                     android:id="@+id/jack_rule_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -446,8 +455,8 @@
                     />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
-        //Q
 
+        //Q
         <android.support.v7.widget.CardView
             android:id="@+id/queen_cv"
             android:layout_width="match_parent"
@@ -472,6 +481,7 @@
                     />
 
                 <TextView
+                    android:textColor="@color/grey_background"
                     android:id="@+id/queen_rule_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -489,8 +499,8 @@
                     />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
-        //K
 
+        //K
         <android.support.v7.widget.CardView
             android:id="@+id/king_cv"
             android:layout_width="match_parent"
@@ -524,6 +534,7 @@
                     />
 
                 <TextView
+                    android:textColor="@color/grey_background"
                     android:id="@+id/king_rule_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -532,8 +543,8 @@
                     />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
-        //A
 
+        //A
         <android.support.v7.widget.CardView
             android:id="@+id/ace_cv"
             android:layout_width="match_parent"
@@ -558,6 +569,7 @@
                     />
 
                 <TextView
+                    android:textColor="@color/grey_background"
                     android:id="@+id/ace_rule_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

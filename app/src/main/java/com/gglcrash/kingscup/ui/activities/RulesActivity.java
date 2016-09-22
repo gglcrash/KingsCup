@@ -5,15 +5,18 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.gglcrash.kingscup.R;
 import com.gglcrash.kingscup.utils.ConstantManager;
 import com.gglcrash.kingscup.utils.Rule;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
 
 /**
  * Created by gglcrash on 22.09.2016.
@@ -26,56 +29,56 @@ public class RulesActivity extends BaseActivity {
     private ArrayList<Rule> enabledRulesList;
 
     @BindView(R.id.two_rule_img) ImageView twoImg;
-    @BindView(R.id.two_rule_title) ImageView twoRuleTitle;
-    @BindView(R.id.two_rule_text) ImageView twoRulteText;
+    @BindView(R.id.two_rule_title) TextView twoRuleTitle;
+    @BindView(R.id.two_rule_text) TextView twoRulteText;
 
     @BindView(R.id.three_rule_img) ImageView threeImg;
-    @BindView(R.id.three_rule_title) ImageView threeRuleTitle;
-    @BindView(R.id.three_rule_text) ImageView threeRulteText;
+    @BindView(R.id.three_rule_title) TextView threeRuleTitle;
+    @BindView(R.id.three_rule_text) TextView threeRulteText;
 
     @BindView(R.id.four_rule_img) ImageView fourImg;
-    @BindView(R.id.four_rule_title) ImageView fourRuleTitle;
-    @BindView(R.id.four_rule_text) ImageView fourRulteText;
+    @BindView(R.id.four_rule_title) TextView fourRuleTitle;
+    @BindView(R.id.four_rule_text) TextView fourRulteText;
 
     @BindView(R.id.five_rule_img) ImageView fiveImg;
-    @BindView(R.id.five_rule_title) ImageView fiveRuleTitle;
-    @BindView(R.id.five_rule_text) ImageView fiveRulteText;
+    @BindView(R.id.five_rule_title) TextView fiveRuleTitle;
+    @BindView(R.id.five_rule_text) TextView fiveRulteText;
 
     @BindView(R.id.six_rule_img) ImageView sixImg;
-    @BindView(R.id.six_rule_title) ImageView sixRuleTitle;
-    @BindView(R.id.six_rule_text) ImageView sixRulteText;
+    @BindView(R.id.six_rule_title) TextView sixRuleTitle;
+    @BindView(R.id.six_rule_text) TextView sixRulteText;
 
     @BindView(R.id.seven_rule_img) ImageView sevenImg;
-    @BindView(R.id.seven_rule_title) ImageView sevenRuleTitle;
-    @BindView(R.id.seven_rule_text) ImageView sevenRulteText;
+    @BindView(R.id.seven_rule_title) TextView sevenRuleTitle;
+    @BindView(R.id.seven_rule_text) TextView sevenRulteText;
 
     @BindView(R.id.eight_rule_img) ImageView eightImg;
-    @BindView(R.id.eight_rule_title) ImageView eightRuleTitle;
-    @BindView(R.id.eight_rule_text) ImageView eightRulteText;
+    @BindView(R.id.eight_rule_title) TextView eightRuleTitle;
+    @BindView(R.id.eight_rule_text) TextView eightRulteText;
 
     @BindView(R.id.nine_rule_img) ImageView nineImg;
-    @BindView(R.id.nine_rule_title) ImageView nineRuleTitle;
-    @BindView(R.id.nine_rule_text) ImageView nineRulteText;
+    @BindView(R.id.nine_rule_title) TextView nineRuleTitle;
+    @BindView(R.id.nine_rule_text) TextView nineRulteText;
 
     @BindView(R.id.ten_rule_img) ImageView tenImg;
-    @BindView(R.id.ten_rule_title) ImageView tenRuleTitle;
-    @BindView(R.id.ten_rule_text) ImageView tenRulteText;
+    @BindView(R.id.ten_rule_title) TextView tenRuleTitle;
+    @BindView(R.id.ten_rule_text) TextView tenRulteText;
 
     @BindView(R.id.jack_rule_img) ImageView jackImg;
-    @BindView(R.id.jack_rule_title) ImageView jackRuleTitle;
-    @BindView(R.id.jack_rule_text) ImageView jackRulteText;
+    @BindView(R.id.jack_rule_title) TextView jackRuleTitle;
+    @BindView(R.id.jack_rule_text) TextView jackRulteText;
 
     @BindView(R.id.queen_rule_img) ImageView queenImg;
-    @BindView(R.id.queen_rule_title) ImageView queenRuleTitle;
-    @BindView(R.id.queen_rule_text) ImageView queenRulteText;
+    @BindView(R.id.queen_rule_title) TextView queenRuleTitle;
+    @BindView(R.id.queen_rule_text) TextView queenRulteText;
 
     @BindView(R.id.king_rule_img) ImageView kingImg;
-    @BindView(R.id.king_rule_title) ImageView kingRuleTitle;
-    @BindView(R.id.king_rule_text) ImageView kingRulteText;
+    @BindView(R.id.king_rule_title) TextView kingRuleTitle;
+    @BindView(R.id.king_rule_text) TextView kingRulteText;
 
     @BindView(R.id.ace_rule_img) ImageView aceImg;
-    @BindView(R.id.ace_rule_title) ImageView aceRuleTitle;
-    @BindView(R.id.ace_rule_text) ImageView aceRulteText;
+    @BindView(R.id.ace_rule_title) TextView aceRuleTitle;
+    @BindView(R.id.ace_rule_text) TextView aceRulteText;
 
 
 
@@ -96,6 +99,7 @@ public class RulesActivity extends BaseActivity {
         allOfMyRulesList = getIntent().getParcelableArrayListExtra(ConstantManager.ALL_RULES_LIST);
         enabledRulesList = getIntent().getParcelableArrayListExtra(ConstantManager.ENABLED_RULES_LIST);
         updateRules();
+
     }
 
     private void updateRules(){
@@ -105,7 +109,114 @@ public class RulesActivity extends BaseActivity {
         intentResult.putParcelableArrayListExtra(ConstantManager.ALL_RULES_LIST,allOfMyRulesList);
         setResult(ConstantManager.RESULT_RULES_CODE,intentResult);
         */
-
+        for (Rule enRule:enabledRulesList) {
+            switch (enRule.getValue()){
+                case TWO:{
+                    Picasso.with(this)
+                            .load(enRule.getImageId())
+                            .resize(ConstantManager.MINI_CARD_WIDTH,ConstantManager.MINI_CARD_HEIGHT)
+                            .into(twoImg);
+                    twoRuleTitle.setText(enRule.getRuleTitle());
+                    twoRulteText.setText(enRule.getRuleText());
+                }
+                case THREE:{
+                    Picasso.with(this)
+                        .load(enRule.getImageId())
+                        .resize(ConstantManager.MINI_CARD_WIDTH,ConstantManager.MINI_CARD_HEIGHT)
+                        .into(threeImg);
+                    threeRuleTitle.setText(enRule.getRuleTitle());
+                    threeRulteText.setText(enRule.getRuleText());
+                }
+                case FOUR:{
+                    Picasso.with(this)
+                            .load(enRule.getImageId())
+                            .resize(ConstantManager.MINI_CARD_WIDTH,ConstantManager.MINI_CARD_HEIGHT)
+                            .into(fourImg);
+                    fourRuleTitle.setText(enRule.getRuleTitle());
+                    fourRulteText.setText(enRule.getRuleText());
+                }
+                case FIVE:{
+                    Picasso.with(this)
+                            .load(enRule.getImageId())
+                            .resize(ConstantManager.MINI_CARD_WIDTH,ConstantManager.MINI_CARD_HEIGHT)
+                            .into(fiveImg);
+                    fiveRuleTitle.setText(enRule.getRuleTitle());
+                    fiveRulteText.setText(enRule.getRuleText());
+                }
+                case SIX:{
+                    Picasso.with(this)
+                            .load(enRule.getImageId())
+                            .resize(ConstantManager.MINI_CARD_WIDTH,ConstantManager.MINI_CARD_HEIGHT)
+                            .into(sixImg);
+                    sixRuleTitle.setText(enRule.getRuleTitle());
+                    sixRulteText.setText(enRule.getRuleText());
+                }
+                case SEVEN:{
+                    Picasso.with(this)
+                            .load(enRule.getImageId())
+                            .resize(ConstantManager.MINI_CARD_WIDTH,ConstantManager.MINI_CARD_HEIGHT)
+                            .into(sevenImg);
+                    sevenRuleTitle.setText(enRule.getRuleTitle());
+                    sevenRulteText.setText(enRule.getRuleText());
+                }
+                case EIGHT:{
+                    Picasso.with(this)
+                            .load(enRule.getImageId())
+                            .resize(ConstantManager.MINI_CARD_WIDTH,ConstantManager.MINI_CARD_HEIGHT)
+                            .into(eightImg);
+                    eightRuleTitle.setText(enRule.getRuleTitle());
+                    eightRulteText.setText(enRule.getRuleText());
+                }
+                case NINE:{
+                    Picasso.with(this)
+                            .load(enRule.getImageId())
+                            .resize(ConstantManager.MINI_CARD_WIDTH,ConstantManager.MINI_CARD_HEIGHT)
+                            .into(nineImg);
+                    nineRuleTitle.setText(enRule.getRuleTitle());
+                    nineRulteText.setText(enRule.getRuleText());
+                }
+                case TEN:{
+                    Picasso.with(this)
+                            .load(enRule.getImageId())
+                            .resize(ConstantManager.MINI_CARD_WIDTH,ConstantManager.MINI_CARD_HEIGHT)
+                            .into(tenImg);
+                    tenRuleTitle.setText(enRule.getRuleTitle());
+                    tenRulteText.setText(enRule.getRuleText());
+                }
+                case JACK:{
+                    Picasso.with(this)
+                            .load(enRule.getImageId())
+                            .resize(ConstantManager.MINI_CARD_WIDTH,ConstantManager.MINI_CARD_HEIGHT)
+                            .into(jackImg);
+                    jackRuleTitle.setText(enRule.getRuleTitle());
+                    jackRulteText.setText(enRule.getRuleText());
+                }
+                case QUEEN:{
+                    Picasso.with(this)
+                            .load(enRule.getImageId())
+                            .resize(ConstantManager.MINI_CARD_WIDTH,ConstantManager.MINI_CARD_HEIGHT)
+                            .into(queenImg);
+                    queenRuleTitle.setText(enRule.getRuleTitle());
+                    queenRulteText.setText(enRule.getRuleText());
+                }
+                case KING:{
+                    Picasso.with(this)
+                            .load(enRule.getImageId())
+                            .resize(ConstantManager.MINI_CARD_WIDTH,ConstantManager.MINI_CARD_HEIGHT)
+                            .into(kingImg);
+                    kingRuleTitle.setText(enRule.getRuleTitle());
+                    kingRulteText.setText(enRule.getRuleText());
+                }
+                case ACE:{
+                    Picasso.with(this)
+                            .load(enRule.getImageId())
+                            .resize(ConstantManager.MINI_CARD_WIDTH,ConstantManager.MINI_CARD_HEIGHT)
+                            .into(aceImg);
+                    aceRuleTitle.setText(enRule.getRuleTitle());
+                    aceRulteText.setText(enRule.getRuleText());
+                }
+            }
+        }
 
     }
 }

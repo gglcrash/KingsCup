@@ -35,6 +35,7 @@ public class MainActivity extends BaseActivity {
         decorView.setSystemUiVisibility(uiOptions);
 
         setCards();
+        setRules();
     }
 
     @OnClick(R.id.fab_settings)
@@ -140,5 +141,74 @@ public class MainActivity extends BaseActivity {
         myCardList.add(new Card(CardValue.ACE,R.drawable.ace_of_diamonds,getString(R.string.rule_ace)));
         myCardList.add(new Card(CardValue.ACE,R.drawable.ace_of_hearts,getString(R.string.rule_ace)));
         myCardList.add(new Card(CardValue.ACE,R.drawable.ace_of_spades,getString(R.string.rule_ace)));
+    }
+
+    private void setRules(){
+        Rule basicTwoRule = new Rule(CardValue.TWO,getString(R.string.two_rule_title),
+                getString(R.string.two_rule_text),R.drawable.two_of_hearts);
+        allOfMyRulesList.add(basicTwoRule);
+        enabledRulesList.add(basicTwoRule);
+
+        Rule basicThreeRule = new Rule(CardValue.THREE,getString(R.string.three_rule_title),
+                getString(R.string.three_rule_text),R.drawable.three_of_hearts);
+        allOfMyRulesList.add(basicThreeRule);
+        enabledRulesList.add(basicThreeRule);
+
+        Rule basicFourRule = new Rule(CardValue.FOUR,getString(R.string.four_rule_title),
+                getString(R.string.four_rule_text),R.drawable.four_of_hearts);
+        allOfMyRulesList.add(basicFourRule);
+        enabledRulesList.add(basicFourRule);
+
+        Rule basicFiveRule = new Rule(CardValue.FIVE,getString(R.string.five_rule_title),
+                getString(R.string.five_rule_text),R.drawable.five_of_hearts);
+        allOfMyRulesList.add(basicFiveRule);
+        enabledRulesList.add(basicFiveRule);
+
+        Rule basicSixRule = new Rule(CardValue.SIX,getString(R.string.six_rule_title),
+                getString(R.string.six_rule_text),R.drawable.six_of_hearts);
+        allOfMyRulesList.add(basicSixRule);
+        enabledRulesList.add(basicSixRule);
+
+        Rule basicSevenRule = new Rule(CardValue.SEVEN,getString(R.string.seven_rule_title),
+                getString(R.string.seven_rule_text),R.drawable.seven_of_hearts);
+        allOfMyRulesList.add(basicSevenRule);
+        enabledRulesList.add(basicSevenRule);
+
+        Rule basicEightRule = new Rule(CardValue.EIGHT,getString(R.string.eight_rule_title),
+                getString(R.string.eight_rule_text),R.drawable.eight_of_hearts);
+        allOfMyRulesList.add(basicEightRule);
+        enabledRulesList.add(basicEightRule);
+
+        Rule basicNineRule = new Rule(CardValue.NINE,getString(R.string.nine_rule_title),
+                getString(R.string.nine_rule_text),R.drawable.nine_of_hearts);
+        allOfMyRulesList.add(basicNineRule);
+        enabledRulesList.add(basicNineRule);
+
+        Rule basicTenRule = new Rule(CardValue.TEN,getString(R.string.ten_rule_title),
+                getString(R.string.ten_rule_text),R.drawable.ten_of_hearts);
+        allOfMyRulesList.add(basicTenRule);
+        enabledRulesList.add(basicTenRule);
+
+        Rule basicJackRule = new Rule(CardValue.JACK,getString(R.string.jack_rule_title),
+                getString(R.string.jack_rule_text),R.drawable.jack_of_hearts);
+        allOfMyRulesList.add(basicJackRule);
+        enabledRulesList.add(basicJackRule);
+
+        Rule basicQueenRule = new Rule(CardValue.QUEEN,getString(R.string.queen_rule_title),
+                getString(R.string.queen_rule_text),R.drawable.queen_of_hearts);
+        allOfMyRulesList.add(basicQueenRule);
+        enabledRulesList.add(basicQueenRule);
+
+        Rule basicKingRule = new Rule(CardValue.KING,getString(R.string.king_rule_title),
+                getString(R.string.king_rule_text),R.drawable.king_of_hearts);
+        allOfMyRulesList.add(basicKingRule);
+        enabledRulesList.add(basicKingRule);
+
+        Rule basicAceRule = new Rule(CardValue.ACE,getString(R.string.ace_rule_title),
+                getString(R.string.ace_rule_text),R.drawable.ace_of_hearts);
+        allOfMyRulesList.add(basicAceRule);
+        enabledRulesList.add(basicAceRule);
+
+
     }
 }

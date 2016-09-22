@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/spacing_small_8"
-            android:text="Длинный клик по карте откроет следющую"/>
+            android:text="@string/advice_text"/>
 
         <ImageView
             android:id="@+id/img_card_view"

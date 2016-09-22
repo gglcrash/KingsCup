@@ -13,6 +13,7 @@ public class Rule implements Parcelable {
 
     private MainActivity.CardValue value;
     private int imageId;
+
     private String ruleTitle;
     private String ruleText;
 
@@ -53,6 +54,38 @@ public class Rule implements Parcelable {
         dest.writeString(ruleTitle);
         dest.writeString(ruleText);
         dest.writeString(value.name());
+    }
 
+    public void setValue(MainActivity.CardValue value) {
+        this.value = value;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
+    }
+
+    public void setRuleTitle(String ruleTitle) {
+        this.ruleTitle = ruleTitle;
+    }
+
+    public void setRuleText(String ruleText) {
+        this.ruleText = ruleText;
+    }
+
+    public String getRuleText() {
+
+        return ruleText;
+    }
+
+    public MainActivity.CardValue getValue() {
+        return value;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public String getRuleTitle() {
+        return ruleTitle;
     }
 }
