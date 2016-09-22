@@ -19,5 +19,6 @@
     <dimen name="card_width">250dp</dimen>
     <dimen name="card_height">363dp</dimen>
     <dimen name="card_elevation">4dp</dimen>
+    <dimen name="switch_margin">135dp</dimen>
 
 </resources>

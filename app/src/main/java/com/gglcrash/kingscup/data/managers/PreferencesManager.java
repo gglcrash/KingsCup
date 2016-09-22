@@ -3,6 +3,7 @@ package com.gglcrash.kingscup.data.managers;
 import android.content.SharedPreferences;
 import android.net.Uri;
 
+import com.gglcrash.kingscup.utils.ConstantManager;
 import com.gglcrash.kingscup.utils.KingsCupApplication;
 
 import java.util.ArrayList;
@@ -19,24 +20,16 @@ public class PreferencesManager {
         this.mSharedPreferences= KingsCupApplication.getSharedPreferences();
     }
 
-    public void saveUserProfileData(List<String> userFields){
-     /*   SharedPreferences.Editor editor = mSharedPreferences.edit();
+    public void saveVibrationValue(boolean vibration){
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
 
-        for(int i = 0;i<USER_FIELDS.length;i++){
-            editor.putString(USER_FIELDS[i],userFields.get(i));
-        }
-        editor.apply();*/
+        editor.putBoolean(ConstantManager.VIBRATION,vibration);
+        editor.apply();
     }
 
-   /* public List<String> loadUserProfileData(){
-        List<String> userFields = new ArrayList<>();
-        userFields.add(mSharedPreferences.getString(ConstantManager.USER_PHONE_KEY,""));
-        userFields.add(mSharedPreferences.getString(ConstantManager.USER_MAIL_KEY,""));
-        userFields.add(mSharedPreferences.getString(ConstantManager.USER_PROF_KEY,""));
-        userFields.add(mSharedPreferences.getString(ConstantManager.USER_REPO_KEY,""));
-        userFields.add(mSharedPreferences.getString(ConstantManager.USER_INFO_KEY,""));
-        return userFields;
-    }*/
+    public boolean loadVibrationValue(){
+        return mSharedPreferences.getBoolean(ConstantManager.VIBRATION,true);
+    }
 
     public void saveUserPhoto(Uri uri){
     /*    SharedPreferences.Editor editor = mSharedPreferences.edit();

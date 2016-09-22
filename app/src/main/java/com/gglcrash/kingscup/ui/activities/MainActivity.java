@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.gglcrash.kingscup.R;
+import com.gglcrash.kingscup.data.managers.DataManager;
 import com.gglcrash.kingscup.utils.Card;
 import com.gglcrash.kingscup.utils.ConstantManager;
 import com.gglcrash.kingscup.utils.Rule;
@@ -21,6 +22,8 @@ public class MainActivity extends BaseActivity {
         NINE, TEN, JACK, QUEEN, KING, ACE
     }
 
+    DataManager mDataManager;
+    private boolean isVibrationEnabled;
     private ArrayList<Rule> enabledRulesList = new ArrayList<>();
     private ArrayList<Rule> allOfMyRulesList = new ArrayList<>();
     private ArrayList<Card> myCardList = new ArrayList<>();
@@ -34,13 +37,17 @@ public class MainActivity extends BaseActivity {
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
+        mDataManager = DataManager.getInstance();
+        isVibrationEnabled = mDataManager.getPreferencesManager().loadVibrationValue();
         setCards();
         setRules();
     }
 
     @OnClick(R.id.fab_settings)
     public void fabSettingsClick(){
-        showToast("settings!");
+        Intent intent = new Intent(this, SettingsActivity.class);
+        intent.putExtra(ConstantManager.VIBRATION,isVibrationEnabled);
+        startActivityForResult(intent, ConstantManager.RESULT_SETTINGS_CODE);
     }
 
     @OnClick(R.id.fab_quit)
@@ -52,6 +59,7 @@ public class MainActivity extends BaseActivity {
     public void playClick(){
         Intent intent = new Intent(this, PlayActivity.class);
         intent.putParcelableArrayListExtra(ConstantManager.CARD_LIST, myCardList);
+        intent.putExtra(ConstantManager.VIBRATION,isVibrationEnabled);
         startActivity(intent);
     }
 
@@ -73,6 +81,11 @@ public class MainActivity extends BaseActivity {
                     enabledRulesList = data.getParcelableArrayListExtra(ConstantManager.ENABLED_RULES_LIST);
                 }
             }
+            case ConstantManager.RESULT_SETTINGS_CODE:
+                if(data!=null){
+                    isVibrationEnabled= data.getBooleanExtra(ConstantManager.VIBRATION,true);
+                    mDataManager.getPreferencesManager().saveVibrationValue(isVibrationEnabled);
+                }
         }
     }
 

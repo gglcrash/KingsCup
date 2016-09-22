@@ -25,6 +25,7 @@ import butterknife.OnLongClick;
  */
 public class PlayActivity extends BaseActivity {
 
+    private boolean isVibrationEnabled;
     private Vibrator v;
     private ArrayList<Card> myCardList = new ArrayList<>();
     private Card currentCard;
@@ -57,6 +58,7 @@ public class PlayActivity extends BaseActivity {
         kingsCount = 0;
         playedCards = 0;
         currentCard = null;
+        isVibrationEnabled = getIntent().getBooleanExtra(ConstantManager.VIBRATION,true);
 
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
@@ -104,10 +106,14 @@ public class PlayActivity extends BaseActivity {
             kingsCount++;
             if(kingsCount==4){
                 kingsPlayed.setTextColor(getResources().getColor(R.color.red));
-                v.vibrate(700);
+                if(isVibrationEnabled) {
+                    v.vibrate(ConstantManager.LONG_VIBRATION_DURATION);
+                }
             }
             else{
-                v.vibrate(250);
+                if(isVibrationEnabled) {
+                    v.vibrate(ConstantManager.SHORT_VIBRATION_DURATION);
+                }
             }
         }
 

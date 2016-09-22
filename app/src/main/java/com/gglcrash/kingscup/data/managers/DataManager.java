@@ -20,6 +20,7 @@ public class DataManager {
     }
 
     public PreferencesManager getPreferencesManager() {
+
         return mPreferencesManager;
     }
 }
