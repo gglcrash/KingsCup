@@ -33,14 +33,22 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
-
         mDataManager = DataManager.getInstance();
         isVibrationEnabled = mDataManager.getPreferencesManager().loadVibrationValue();
         setCards();
         setRules();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideStatusBar();
+    }
+
+    private void hideStatusBar(){
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 
     @OnClick(R.id.fab_settings)
@@ -52,13 +60,14 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.fab_quit)
     public void fabQuitClick(){
-        finish();
+        System.exit(1);
     }
 
     @OnClick(R.id.play_btn)
     public void playClick(){
         Intent intent = new Intent(this, PlayActivity.class);
         intent.putParcelableArrayListExtra(ConstantManager.CARD_LIST, myCardList);
+        intent.putParcelableArrayListExtra(ConstantManager.ENABLED_RULES_LIST,enabledRulesList);
         intent.putExtra(ConstantManager.VIBRATION,isVibrationEnabled);
         startActivity(intent);
     }

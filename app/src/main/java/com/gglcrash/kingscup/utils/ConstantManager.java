@@ -19,6 +19,9 @@ public interface ConstantManager {
     int LONG_VIBRATION_DURATION = 700;
     int SHORT_VIBRATION_DURATION = 250;
 
+    int SWIPE_LENGTH = 140;
+    int TITLE_RULE_SIZE = 20;
+
     String VIBRATION = "VIBRATION";
     String ALL_RULES_LIST = "ALL_RULES_LIST";
     String ENABLED_RULES_LIST = "ENABLED_RULES_LIST";

@@ -15,8 +15,8 @@
     <string name="rule_ace">Водопад</string>
     <string name="cards_in_deck_text">Карт в колоде:</string>
     <string name="cards_played_text">Карт сыграло:</string>
-    <string name="kings_played_text">Королей сыграло:</string>
-    <string name="advice_text">Длинный клик по карте откроет следующую</string>
+    <string name="kings_played_text">Королей вышло:</string>
+    <string name="advice_text">Свайп по карте откроет следующую</string>
     <string name="two_rule_title">Для тебя</string>
     <string name="three_rule_title">Для меня</string>
     <string name="four_rule_title">Для пола</string>
@@ -44,4 +44,6 @@
     <string name="king_rule_text">Когда кто-либо вытягивает короля, все игроки должны вылить содержимое своих бокалов в кубок короля, находящийся в центре стола. При выпадении четвертого короля доставший его игрок должен выпить содержимое этого кубка. После этого игра заканчивается или продолжается по договоренности.</string>
     <string name="ace_rule_text">Если кому-то выпал туз, каждый должен выпить, начиная от вытянувшего карту игрока. Каждый участник может начать пить лишь после того, как это сделает его сосед справа, и имеет право остановиться лишь после того, как этот сосед прекратит пить. Поэтому если вы сидите по левую сторону от игрока, вытянувшего туза, вы не сможете перестать пить, пока этого не сделают все сидящие за столом.</string>
     <string name="vibrate_text">Вибрация</string>
+    <string name="advice">Подсказка</string>
+    <string name="ok_btn_text">ОК</string>
 </resources>

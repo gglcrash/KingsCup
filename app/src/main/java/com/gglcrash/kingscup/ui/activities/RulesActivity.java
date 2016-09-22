@@ -92,14 +92,22 @@ public class RulesActivity extends BaseActivity {
         allOfMyRulesList = new ArrayList<>();
         enabledRulesList = new ArrayList<>();
 
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
-
         allOfMyRulesList = getIntent().getParcelableArrayListExtra(ConstantManager.ALL_RULES_LIST);
         enabledRulesList = getIntent().getParcelableArrayListExtra(ConstantManager.ENABLED_RULES_LIST);
         updateRules();
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideStatusBar();
+    }
+
+    private void hideStatusBar(){
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 
     private void updateRules(){

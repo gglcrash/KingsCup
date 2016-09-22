@@ -29,7 +29,15 @@ public class SettingsActivity extends BaseActivity {
 
         isVibrationEnabled=getIntent().getBooleanExtra(ConstantManager.VIBRATION,true);
         switchButton.setChecked(isVibrationEnabled);
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideStatusBar();
+    }
+
+    private void hideStatusBar(){
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);

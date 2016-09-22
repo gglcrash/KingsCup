@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/spacing_small_8"
+
             android:text="@string/advice_text"/>
 
         <ImageView
@@ -63,34 +64,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/spacing_small_8"
-            android:orientation="horizontal"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:text="@string/cards_played_text"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                />
-
-            <TextView
-                android:id="@+id/cards_played_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/spacing_small_8"
@@ -127,6 +101,10 @@
         app:layout_anchor="@id/img_card_view"
         app:layout_anchorGravity="bottom|right"
         />
-
+<Button
+    android:id="@+id/btn_back"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:background="@drawable/ic_arrow_back_black_24dp"/>
 
 </android.support.design.widget.CoordinatorLayout>
