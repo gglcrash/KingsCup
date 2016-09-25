@@ -46,4 +46,7 @@
     <string name="vibrate_text">Вибрация</string>
     <string name="advice">Подсказка</string>
     <string name="ok_btn_text">ОК</string>
+    <string name="choose_what_you_want">Выберите действие:</string>
+    <string name="continue_game">Продолжить</string>
+    <string name="restart_game">Начать сначала</string>
 </resources>

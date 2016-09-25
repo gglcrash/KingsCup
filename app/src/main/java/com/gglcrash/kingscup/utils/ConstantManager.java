@@ -26,7 +26,10 @@ public interface ConstantManager {
     int TITLE_RULE_SIZE = 20;
 
     int ZERO = 0;
+    int RESUME_RESTART_CONST = 1000;
 
+    String CARDS_IN_DECK_SP = "CARDS_IN_DECK_SP";
+    String SAVING_CARDS_SP = "SAVING_CARDS_SP";
     String PLAYED_CARDS_COUNT = "PLAYED_CARDS_COUNT";
     String KINGS_COUNT = "KINGS_COUNT";
     String SAVED_CARD = "SAVED_CARD";

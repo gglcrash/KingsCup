@@ -36,9 +36,10 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
         mDataManager = DataManager.getInstance();
         isVibrationEnabled = mDataManager.getPreferencesManager().loadVibrationValue();
-        savedDeck = null;
-        savedKingsCount = 0;
-        savedPlayedCards = 0;
+        savedCard = mDataManager.getPreferencesManager().loadSavedCard();
+        savedDeck = mDataManager.getPreferencesManager().loadDeck();
+        savedKingsCount = mDataManager.getPreferencesManager().loadKingsCount();
+        savedPlayedCards = mDataManager.getPreferencesManager().loadPlayedCardsCount();
         setCards();
         setRules();
     }
@@ -101,12 +102,14 @@ public class MainActivity extends BaseActivity {
                     enabledRulesList = data.getParcelableArrayListExtra(ConstantManager.ENABLED_RULES_LIST);
                 }
             }
+            break;
             case ConstantManager.RESULT_SETTINGS_CODE: {
                 if (data != null) {
                     isVibrationEnabled = data.getBooleanExtra(ConstantManager.VIBRATION, true);
                     mDataManager.getPreferencesManager().saveVibrationValue(isVibrationEnabled);
                 }
             }
+            break;
             case ConstantManager.RESULT_SAVED_PLAY_DECK:
             {
                 if(data!=null){
@@ -114,8 +117,14 @@ public class MainActivity extends BaseActivity {
                     savedCard = data.getParcelableExtra(ConstantManager.SAVED_CARD);
                     savedPlayedCards = data.getIntExtra(ConstantManager.PLAYED_CARDS_COUNT,ConstantManager.ZERO);
                     savedKingsCount = data.getIntExtra(ConstantManager.KINGS_COUNT,ConstantManager.ZERO);
+
+                    mDataManager.getPreferencesManager().saveDeck(savedDeck);
+                    mDataManager.getPreferencesManager().saveCard(savedCard);
+                    mDataManager.getPreferencesManager().savePlayedCardsValue(savedPlayedCards);
+                    mDataManager.getPreferencesManager().saveKingsCount(savedKingsCount);
                 }
             }
+            break;
         }
     }
 

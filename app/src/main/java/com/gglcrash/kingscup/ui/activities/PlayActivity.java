@@ -1,5 +1,6 @@
 package com.gglcrash.kingscup.ui.activities;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.gglcrash.kingscup.R;
 import com.gglcrash.kingscup.utils.Card;
@@ -81,6 +83,9 @@ public class PlayActivity extends BaseActivity {
         currentRulesList = getIntent().getParcelableArrayListExtra(ConstantManager.ENABLED_RULES_LIST);
 
         currentCard = getIntent().getParcelableExtra(ConstantManager.SAVED_CARD);
+        if(currentCard!=null){
+            showDialog(ConstantManager.RESUME_RESTART_CONST);
+        }
         playedCards = getIntent().getIntExtra(ConstantManager.PLAYED_CARDS_COUNT, ConstantManager.ZERO);
         kingsCount = getIntent().getIntExtra(ConstantManager.KINGS_COUNT,ConstantManager.ZERO);
         setSavedCard(currentCard);
@@ -90,6 +95,7 @@ public class PlayActivity extends BaseActivity {
 
     @Override
     protected void onResume() {
+
         super.onResume();
         hideStatusBar();
          }
@@ -157,13 +163,7 @@ public class PlayActivity extends BaseActivity {
                     {
                         adviceText.setText("");
                         if(gameOver){
-                            copyArrayList(tempCardList,myCardList);
-                            kingsCount = 0;
-                            playedCards = 0;
-                            gameOver = false;
-                            imgCardView.setBackgroundResource(R.drawable.back);
-                            kingsPlayed.setTextColor(getResources().getColor(R.color.black));
-                            updateStats();
+                            restartGame();
                         }
                         else {
                             imgCardView.setBackgroundResource(R.drawable.clear_back);
@@ -178,6 +178,43 @@ public class PlayActivity extends BaseActivity {
             }
         }
         return true;
+    }
+
+    private void restartGame(){
+        copyArrayList(tempCardList,myCardList);
+        kingsCount = 0;
+        playedCards = 0;
+        currentCard=null;
+        gameOver = false;
+        imgCardView.setBackgroundResource(R.drawable.back);
+        kingsPlayed.setTextColor(getResources().getColor(R.color.black));
+        updateStats();
+    }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        switch (id) {
+            case ConstantManager.RESUME_RESTART_CONST:
+
+                final String[] mCatsName ={getString(R.string.continue_game), getString(R.string.restart_game)};
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle(getString(R.string.choose_what_you_want)); // заголовок для диалога
+
+                builder.setItems(mCatsName, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int item) {
+                        if (item == 1) {
+                            restartGame();
+                        }
+                    }
+                });
+                builder.setCancelable(false);
+                return builder.create();
+
+            default:
+                return null;
+        }
     }
 /*
     @OnLongClick(R.id.img_card_view)
