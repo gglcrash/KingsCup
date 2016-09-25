@@ -1,5 +1,7 @@
 package com.gglcrash.kingscup.utils;
 
+import java.lang.ref.SoftReference;
+
 /**
  * Created by gglcrash on 20.09.2016.
  */
@@ -12,6 +14,7 @@ public interface ConstantManager {
     int CARDS_IN_DECK = 52;
     int RESULT_RULES_CODE = 101;
     int RESULT_SETTINGS_CODE=201;
+    int RESULT_SAVED_PLAY_DECK = 301;
 
     int MINI_CARD_WIDTH = 167;
     int MINI_CARD_HEIGHT = 242;
@@ -22,7 +25,14 @@ public interface ConstantManager {
     int SWIPE_LENGTH = 140;
     int TITLE_RULE_SIZE = 20;
 
+    int ZERO = 0;
+
+    String PLAYED_CARDS_COUNT = "PLAYED_CARDS_COUNT";
+    String KINGS_COUNT = "KINGS_COUNT";
+    String SAVED_CARD = "SAVED_CARD";
     String VIBRATION = "VIBRATION";
     String ALL_RULES_LIST = "ALL_RULES_LIST";
     String ENABLED_RULES_LIST = "ENABLED_RULES_LIST";
+    String SAVED_DECK = "SAVED_DECK";
+
 }

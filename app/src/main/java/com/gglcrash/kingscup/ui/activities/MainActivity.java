@@ -21,20 +21,24 @@ public class MainActivity extends BaseActivity {
         TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT,
         NINE, TEN, JACK, QUEEN, KING, ACE
     }
-
+    Card savedCard;
     DataManager mDataManager;
+    private int savedPlayedCards, savedKingsCount;
     private boolean isVibrationEnabled;
     private ArrayList<Rule> enabledRulesList = new ArrayList<>();
     private ArrayList<Rule> allOfMyRulesList = new ArrayList<>();
     private ArrayList<Card> myCardList = new ArrayList<>();
+    private ArrayList<Card> savedDeck = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
         mDataManager = DataManager.getInstance();
         isVibrationEnabled = mDataManager.getPreferencesManager().loadVibrationValue();
+        savedDeck = null;
+        savedKingsCount = 0;
+        savedPlayedCards = 0;
         setCards();
         setRules();
     }
@@ -66,10 +70,17 @@ public class MainActivity extends BaseActivity {
     @OnClick(R.id.play_btn)
     public void playClick(){
         Intent intent = new Intent(this, PlayActivity.class);
-        intent.putParcelableArrayListExtra(ConstantManager.CARD_LIST, myCardList);
+        if(savedDeck == null) {
+            intent.putParcelableArrayListExtra(ConstantManager.CARD_LIST, myCardList);
+        }else{
+            intent.putParcelableArrayListExtra(ConstantManager.CARD_LIST, savedDeck);
+            intent.putExtra(ConstantManager.SAVED_CARD, savedCard);
+            intent.putExtra(ConstantManager.PLAYED_CARDS_COUNT,savedPlayedCards);
+            intent.putExtra(ConstantManager.KINGS_COUNT,savedKingsCount);
+        }
         intent.putParcelableArrayListExtra(ConstantManager.ENABLED_RULES_LIST,enabledRulesList);
         intent.putExtra(ConstantManager.VIBRATION,isVibrationEnabled);
-        startActivity(intent);
+        startActivityForResult(intent,ConstantManager.RESULT_SAVED_PLAY_DECK);
     }
 
     @OnClick(R.id.rules_btn)
@@ -90,11 +101,21 @@ public class MainActivity extends BaseActivity {
                     enabledRulesList = data.getParcelableArrayListExtra(ConstantManager.ENABLED_RULES_LIST);
                 }
             }
-            case ConstantManager.RESULT_SETTINGS_CODE:
-                if(data!=null){
-                    isVibrationEnabled= data.getBooleanExtra(ConstantManager.VIBRATION,true);
+            case ConstantManager.RESULT_SETTINGS_CODE: {
+                if (data != null) {
+                    isVibrationEnabled = data.getBooleanExtra(ConstantManager.VIBRATION, true);
                     mDataManager.getPreferencesManager().saveVibrationValue(isVibrationEnabled);
                 }
+            }
+            case ConstantManager.RESULT_SAVED_PLAY_DECK:
+            {
+                if(data!=null){
+                    savedDeck = data.getParcelableArrayListExtra(ConstantManager.SAVED_DECK);
+                    savedCard = data.getParcelableExtra(ConstantManager.SAVED_CARD);
+                    savedPlayedCards = data.getIntExtra(ConstantManager.PLAYED_CARDS_COUNT,ConstantManager.ZERO);
+                    savedKingsCount = data.getIntExtra(ConstantManager.KINGS_COUNT,ConstantManager.ZERO);
+                }
+            }
         }
     }
 

@@ -24,12 +24,15 @@ public class PreferencesManager {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
 
         editor.putBoolean(ConstantManager.VIBRATION,vibration);
+
         editor.apply();
     }
 
     public boolean loadVibrationValue(){
         return mSharedPreferences.getBoolean(ConstantManager.VIBRATION,true);
     }
+
+
 
     public void saveUserPhoto(Uri uri){
     /*    SharedPreferences.Editor editor = mSharedPreferences.edit();
