@@ -186,6 +186,7 @@ public class PlayActivity extends BaseActivity {
         playedCards = 0;
         currentCard=null;
         gameOver = false;
+        adviceText.setText("");
         imgCardView.setBackgroundResource(R.drawable.back);
         kingsPlayed.setTextColor(getResources().getColor(R.color.black));
         updateStats();

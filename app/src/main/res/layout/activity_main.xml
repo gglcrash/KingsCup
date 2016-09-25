@@ -7,57 +7,63 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".ui.activities.MainActivity"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/main_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:background="@drawable/background">
+
+        <ImageView
+
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_marginTop="@dimen/spacing_medial_24"
+            android:background="@drawable/cup"/>
 
         <Button
             android:id="@+id/play_btn"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
+            android:text="Играть"
+            android:layout_width="@dimen/button_size_width"
+            android:layout_height="@dimen/button_size_height"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="56dp"
-            android:background="@drawable/play_selector"
+            android:layout_marginTop="@dimen/spacing_medial_24"
+            android:background="@drawable/button_main"
 
             />
 
         <Button
             android:id="@+id/rules_btn"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
+            android:text="Правила"
+            android:layout_width="@dimen/button_size_width"
+            android:layout_height="@dimen/button_size_height"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="256dp"
-            android:background="@drawable/rules_selector"
+            android:layout_marginTop="@dimen/spacing_medial_24"
+            android:background="@drawable/button_main"
             />
-    </FrameLayout>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_settings_black_24dp"
-        app:layout_anchor="@id/main_frame_layout"
-        app:layout_anchorGravity="bottom|left"
-        android:layout_marginLeft="@dimen/fab_sideMargin"
-        android:layout_marginBottom="@dimen/fab_marginBottom"
-        />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_quit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_power_settings_new_black_24dp"
-        app:layout_anchor="@id/main_frame_layout"
-        app:layout_anchorGravity="bottom|right"
-        android:layout_marginRight="@dimen/fab_sideMargin"
-        android:layout_marginBottom="@dimen/fab_marginBottom"
-        />
+        <Button
+            android:id="@+id/fab_settings"
+            android:text="Настройки"
+            android:layout_width="@dimen/button_size_width"
+            android:layout_height="@dimen/button_size_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_medial_24"
+            android:background="@drawable/button_main"
+            />
+        <Button
+            android:id="@+id/fab_quit"
+            android:text="Выйти"
+            android:layout_width="@dimen/button_size_width"
+            android:layout_height="@dimen/button_size_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_medial_24"
+            android:background="@drawable/button_main"
+            />
+    </LinearLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>

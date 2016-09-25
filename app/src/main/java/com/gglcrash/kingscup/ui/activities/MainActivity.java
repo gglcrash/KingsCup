@@ -3,6 +3,7 @@ package com.gglcrash.kingscup.ui.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.gglcrash.kingscup.R;
 import com.gglcrash.kingscup.data.managers.DataManager;
@@ -51,9 +52,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void hideStatusBar(){
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
     @OnClick(R.id.fab_settings)
