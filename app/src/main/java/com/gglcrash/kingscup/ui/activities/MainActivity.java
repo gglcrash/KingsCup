@@ -71,6 +71,7 @@ public class MainActivity extends BaseActivity {
     public void playClick(){
         Intent intent = new Intent(this, PlayActivity.class);
         if(savedDeck == null) {
+            intent.putParcelableArrayListExtra(ConstantManager.FULL_DECK,myCardList);
             intent.putParcelableArrayListExtra(ConstantManager.CARD_LIST, myCardList);
         }else{
             intent.putParcelableArrayListExtra(ConstantManager.FULL_DECK,myCardList);

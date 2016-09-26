@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.view.MotionEvent;
 import android.view.View;
@@ -54,6 +55,8 @@ public class PlayActivity extends BaseActivity {
     @BindView(R.id.kings_played_text_view)
     TextView kingsPlayed;
 
+    @BindView(R.id.fab_info)
+    FloatingActionButton fab_info;
     @BindView(R.id.btn_back)
     Button btnBack;
 
@@ -115,9 +118,10 @@ public class PlayActivity extends BaseActivity {
         decorView.setSystemUiVisibility(uiOptions);
     }
 
-    private void copyArrayList(ArrayList<Card> into, ArrayList<Card> to){
-        for (Card card:into) {
-            to.add(card);
+    private void copyArrayList(ArrayList<Card> from, ArrayList<Card> into){
+        into.clear();
+        for (Card card:from) {
+            into.add(card);
         }
     }
 
@@ -186,14 +190,16 @@ public class PlayActivity extends BaseActivity {
         playedCards = 0;
         currentCard=null;
         gameOver = false;
-        adviceText.setText("");
         imgCardView.setBackgroundResource(R.drawable.back);
         kingsPlayed.setTextColor(getResources().getColor(R.color.black));
+        adviceText.setText(R.string.advice_text);
+        adviceText.setTextSize(12);
         updateStats();
     }
 
     @Override
     protected Dialog onCreateDialog(int id) {
+        hideStatusBar();
         switch (id) {
             case ConstantManager.RESUME_RESTART_CONST:
 
@@ -287,6 +293,11 @@ public class PlayActivity extends BaseActivity {
 
         if(kingsCount==4) {
             kingsPlayed.setTextColor(getResources().getColor(R.color.red));
+        }
+        if(currentCard!=null){
+            fab_info.setVisibility(View.VISIBLE);
+        }else{
+            fab_info.setVisibility(View.INVISIBLE);
         }
 
         hideStatusBar();
