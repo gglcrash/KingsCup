@@ -20,7 +20,7 @@ public class MainActivity extends BaseActivity {
 
     public enum CardValue {
         TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT,
-        NINE, TEN, JACK, QUEEN, KING, ACE
+        NINE, TEN, JACK, QUEEN, KING, ACE, NONE
     }
     Card savedCard;
     DataManager mDataManager;
@@ -73,6 +73,7 @@ public class MainActivity extends BaseActivity {
         if(savedDeck == null) {
             intent.putParcelableArrayListExtra(ConstantManager.CARD_LIST, myCardList);
         }else{
+            intent.putParcelableArrayListExtra(ConstantManager.FULL_DECK,myCardList);
             intent.putParcelableArrayListExtra(ConstantManager.CARD_LIST, savedDeck);
             intent.putExtra(ConstantManager.SAVED_CARD, savedCard);
             intent.putExtra(ConstantManager.PLAYED_CARDS_COUNT,savedPlayedCards);
@@ -117,7 +118,9 @@ public class MainActivity extends BaseActivity {
                     savedPlayedCards = data.getIntExtra(ConstantManager.PLAYED_CARDS_COUNT,ConstantManager.ZERO);
                     savedKingsCount = data.getIntExtra(ConstantManager.KINGS_COUNT,ConstantManager.ZERO);
 
-                    mDataManager.getPreferencesManager().saveDeck(savedDeck);
+                    if(savedDeck!=null) {
+                        mDataManager.getPreferencesManager().saveDeck(savedDeck);
+                    }
                     mDataManager.getPreferencesManager().saveCard(savedCard);
                     mDataManager.getPreferencesManager().savePlayedCardsValue(savedPlayedCards);
                     mDataManager.getPreferencesManager().saveKingsCount(savedKingsCount);

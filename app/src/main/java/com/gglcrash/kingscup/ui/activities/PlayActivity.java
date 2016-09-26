@@ -76,10 +76,9 @@ public class PlayActivity extends BaseActivity {
         imgCardView.setBackgroundResource(R.drawable.back);
         isVibrationEnabled = getIntent().getBooleanExtra(ConstantManager.VIBRATION,true);
 
-        tempCardList = new ArrayList<>();
+        tempCardList = getIntent().getParcelableArrayListExtra(ConstantManager.FULL_DECK);
         myCardList = getIntent().getParcelableArrayListExtra(ConstantManager.CARD_LIST);
 
-        copyArrayList(myCardList,tempCardList);
         currentRulesList = getIntent().getParcelableArrayListExtra(ConstantManager.ENABLED_RULES_LIST);
 
         currentCard = getIntent().getParcelableExtra(ConstantManager.SAVED_CARD);
@@ -169,6 +168,7 @@ public class PlayActivity extends BaseActivity {
                             imgCardView.setBackgroundResource(R.drawable.clear_back);
                             currentCard = null;
                             gameOver = true;
+                            updateStats();
                         }
                     }
 
@@ -285,14 +285,27 @@ public class PlayActivity extends BaseActivity {
             }
         }
 
+        if(kingsCount==4) {
+            kingsPlayed.setTextColor(getResources().getColor(R.color.red));
+        }
+
+        hideStatusBar();
         cardsInDeck.setText(ConstantManager.CARDS_IN_DECK-playedCards+"");
         kingsPlayed.setText(kingsCount+"");
 
         Intent intentResult = new Intent();
-        intentResult.putExtra(ConstantManager.SAVED_CARD,currentCard);
-        intentResult.putParcelableArrayListExtra(ConstantManager.SAVED_DECK,myCardList);
-        intentResult.putExtra(ConstantManager.PLAYED_CARDS_COUNT, playedCards);
-        intentResult.putExtra(ConstantManager.KINGS_COUNT, kingsCount);
+        if(myCardList.size()>0) {
+            intentResult.putExtra(ConstantManager.SAVED_CARD, currentCard);
+            intentResult.putParcelableArrayListExtra(ConstantManager.SAVED_DECK, myCardList);
+            intentResult.putExtra(ConstantManager.PLAYED_CARDS_COUNT, playedCards);
+            intentResult.putExtra(ConstantManager.KINGS_COUNT, kingsCount);
+        }else{
+            intentResult.putExtra(ConstantManager.SAVED_CARD, new Card(MainActivity.CardValue.NONE,
+                    R.drawable.back,""));
+            intentResult.putParcelableArrayListExtra(ConstantManager.SAVED_DECK, null);
+            intentResult.putExtra(ConstantManager.PLAYED_CARDS_COUNT, ConstantManager.ZERO);
+            intentResult.putExtra(ConstantManager.KINGS_COUNT, ConstantManager.ZERO);
+        }
         setResult(ConstantManager.RESULT_SAVED_PLAY_DECK,intentResult);
 
     }

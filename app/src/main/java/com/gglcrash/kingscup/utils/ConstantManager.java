@@ -37,5 +37,6 @@ public interface ConstantManager {
     String ALL_RULES_LIST = "ALL_RULES_LIST";
     String ENABLED_RULES_LIST = "ENABLED_RULES_LIST";
     String SAVED_DECK = "SAVED_DECK";
+    String FULL_DECK = "FULL_DECK";
 
 }
